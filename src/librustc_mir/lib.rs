@@ -64,4 +64,5 @@ pub fn provide(providers: &mut Providers<'_>) {
         let (param_env, (value, field)) = param_env_and_value.into_parts();
         const_eval::const_field(tcx, param_env, None, field, value)
     };
+    providers.lit_to_const = hair::constant::lit_to_const;
 }
